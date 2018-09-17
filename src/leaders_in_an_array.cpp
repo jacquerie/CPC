@@ -5,7 +5,7 @@
 #include <iostream>
 #include <vector>
 
-std::vector<int> find_leaders(const std::vector<int>& nums) {
+std::vector<int> leaders_in_an_array(const std::vector<int>& nums) {
     std::vector<int> result;
 
     int current_max = INT_MIN;
@@ -39,7 +39,7 @@ int main() {
             nums.push_back(num);
         }
 
-        print_vector(find_leaders(nums));
+        print_vector(leaders_in_an_array(nums));
 
         nums.clear();
     }
