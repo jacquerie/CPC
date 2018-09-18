@@ -1,4 +1,13 @@
 // Copyright (c) 2018 Jacopo Notarstefano
+//
+// In order for an element to be a leader it's enough for it to be greater or
+// equal to the maximum to its right. So we can traverse the array from right
+// to left, keeping track of the current maximum, and adding any element
+// greater or equal to it to the result. Because we are traversing from right
+// to left this will produce the result in the wrong order, so we'll need to
+// reverse it before returning.
+//
+// Time: O(n), Space: O(n)
 
 #include <algorithm>
 #include <climits>
