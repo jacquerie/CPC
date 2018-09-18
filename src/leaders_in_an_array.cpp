@@ -21,13 +21,6 @@ std::vector<int> leaders_in_an_array(const std::vector<int>& nums) {
     return result;
 }
 
-void print_vector(const std::vector<int>& nums) {
-    for (const auto& num : nums) {
-        std::cout << num << ' ';
-    }
-    std::cout << std::endl;
-}
-
 int main() {
     int t; std::cin >> t;
     for (int i = 0; i < t; i++) {
@@ -39,7 +32,10 @@ int main() {
             nums.push_back(num);
         }
 
-        print_vector(leaders_in_an_array(nums));
+        for (const auto& leader : leaders_in_an_array(nums)) {
+            std::cout << leader << ' ';
+        }
+        std::cout << '\n';
 
         nums.clear();
     }
