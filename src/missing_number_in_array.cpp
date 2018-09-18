@@ -1,4 +1,10 @@
 // Copyright (c) 2018 Jacopo Notarstefano
+//
+// Using Gauss' Formula we know that the sum of the first n positive integers
+// is (n * (n + 1)) / 2. So we can start from this total and subtract each
+// element of the array: what's left must be the missing element.
+//
+// Time: O(n), Space: O(1)
 
 #include <iostream>
 #include <vector>
