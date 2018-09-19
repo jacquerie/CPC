@@ -1,4 +1,12 @@
 // Copyright (c) 2018 Jacopo Notarstefano
+//
+// We keep track in an unordered map of the number of bars of a given length
+// that we see. Whenever we see a length for the first time we increment the
+// number of towers by 1, and for each bar we check whether its tower has now
+// become the tallest. Finally, we return the height of the tallest tower and
+// the number of towers as a pair.
+//
+// Time: O(n), Space: O(n)
 
 #include <algorithm>
 #include <iostream>
