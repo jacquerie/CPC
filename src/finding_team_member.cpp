@@ -1,4 +1,10 @@
 // Copyright (c) 2018 Jacopo Notarstefano
+//
+// We sort the teams by decreasing strength, then we greedily select a team if
+// both its members were not already selected. Note that the cost is given in
+// terms of the number of teams, and not the number of people.
+//
+// Time: O(n log n), Space: O(n)
 
 #include <algorithm>
 #include <iostream>
