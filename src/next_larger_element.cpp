@@ -44,7 +44,7 @@ int main() {
         for (const auto& element : next_larger_element(n, nums)) {
             std::cout << element << ' ';
         }
-        std::cout << '\n';
+        std::cout << std::endl;
 
         nums.clear();
     }

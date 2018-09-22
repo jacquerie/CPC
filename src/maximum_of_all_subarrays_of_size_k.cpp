@@ -40,7 +40,7 @@ int main() {
         for (const auto& max : maximum_of_all_subarrays_of_size_k(n, k, nums)) {
             std::cout << max << ' ';
         }
-        std::cout << '\n';
+        std::cout << std::endl;
 
         nums.clear();
     }

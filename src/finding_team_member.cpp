@@ -54,5 +54,5 @@ int main() {
     for (int i = 1; i <= 2 * n; i++) {
         std::cout << assignment[i] << ' ';
     }
-    std::cout << '\n';
+    std::cout << std::endl;
 }

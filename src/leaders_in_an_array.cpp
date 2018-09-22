@@ -44,7 +44,7 @@ int main() {
         for (const auto& leader : leaders_in_an_array(nums)) {
             std::cout << leader << ' ';
         }
-        std::cout << '\n';
+        std::cout << std::endl;
 
         nums.clear();
     }
