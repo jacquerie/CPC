@@ -16,15 +16,16 @@ class Team {
     int i, j, strength;
 
     explicit Team(int i, int j, int strength): i(i), j(j), strength(strength) {}
+
+    bool operator>(const Team& other) const {
+        return strength > other.strength;
+    }
 };
 
 std::unordered_map<int, int> finding_team_member(std::vector<Team>& teams) {
     std::unordered_map<int, int> assignment;
 
-    std::sort(teams.begin(), teams.end(),
-        [](const auto& lhs, const auto& rhs) {
-            return lhs.strength > rhs.strength;
-        });
+    std::sort(teams.begin(), teams.end(), std::greater<void>());
 
     for (const auto& team : teams) {
         bool i_not_found = assignment.find(team.i) == assignment.end(),
