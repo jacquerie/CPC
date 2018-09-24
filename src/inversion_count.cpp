@@ -1,4 +1,10 @@
 // Copyright (c) 2018 Jacopo Notarstefano
+//
+// This is Merge Sort with a twist: while merging two sorted runs, if we find
+// that the current element of the second run is bigger than the i-th element
+// of the first, then we have found mid - i inversions, since the run is sorted.
+//
+// Time: O(n log n), Space: O(n)
 
 #include <algorithm>
 #include <cstdint>
