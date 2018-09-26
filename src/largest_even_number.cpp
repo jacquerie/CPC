@@ -1,4 +1,20 @@
 // Copyright (c) 2018 Jacopo Notarstefano
+//
+// The algorithm proceeds in four steps:
+//
+//     1. We scan the number character by character and we record the number of
+//        occurrences of each digit.
+//
+//     2. We set aside the smallest even digit in order to use it as the last
+//        digit of the result, because a number is even if and only if its last
+//        digit is even.
+//
+//     3. We greedily output the digits from the biggest to the smallest in
+//        order to maximize the result.
+//
+//     4. If in step 2 we set aside a digit, we add it to the output.
+//
+// Time: O(n), Space: O(1)
 
 #include <iostream>
 #include <string>
