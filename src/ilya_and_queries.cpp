@@ -5,14 +5,14 @@
 #include <utility>
 #include <vector>
 
-std::vector<int> precompute_queries(std::string s) {
-    std::vector<int> result;
+std::vector<int> precompute_prefix_sums(std::string s) {
+    std::vector<int> result(s.length(), 0);
 
     for (int i = 0; i < s.length(); i++) {
         if (i == 0) {
-            result.push_back(s[i] == s[i + 1] ? 1 : 0);
+            result[i] = (s[i] == s[i + 1]) ? 1 : 0;
         } else {
-            result.push_back(result.back() + (s[i - 1] == s[i] ? 1 : 0));
+            result[i] = result[i - 1] + ((s[i - 1] == s[i]) ? 1 : 0);
         }
     }
 
@@ -26,13 +26,12 @@ int ilya_and_queries(const std::vector<int>& prefix_sums, const std::pair<int, i
 int main() {
     std::string s; std::cin >> s;
 
-    std::vector<int> prefix_sums = precompute_queries(s);
+    std::vector<int> prefix_sums = precompute_prefix_sums(s);
 
     int m; std::cin >> m;
     for (int i = 0; i < m; i++) {
-        std::pair<int, int> query;
-        std::cin >> query.first;
-        std::cin >> query.second;
+        int x, y; std::cin >> x >> y;
+        std::pair<int, int> query(x, y);
 
         std::cout << ilya_and_queries(prefix_sums, query) << std::endl;
     }
