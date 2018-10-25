@@ -1,4 +1,11 @@
 // Copyright (c) 2018 Jacopo Notarstefano
+//
+// We precompute and cache the prefix sums of the array whose i-th element is 1
+// if the (i - 1)-th and the i-th character of the original string were equal.
+// Then, at query time, we answer the query (i, j) by returning the difference
+// between the (j - 1)-th and the (i - 1)-th element.
+//
+// Cache Time: O(n), Cache Space: O(n), Query Time: O(1)
 
 #include <iostream>
 #include <string>
