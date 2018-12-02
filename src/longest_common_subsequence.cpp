@@ -1,4 +1,29 @@
 // Copyright (c) 2018 Jacopo Notarstefano
+//
+// The length of the longest common subsequence between the i-th prefix of the
+// prefix string and the j-th prefix of the second string is the maximum of:
+//
+//   1. The length of the longest common subsequence between the (i - 1)-th
+//      prefix and the j-th prefix, which corresponds to ignoring the i-th
+//      character.
+//
+//   2. The length of the longest common subsequence between the i-th prefix
+//      and the (j - 1)-th prefix, which corresponds to ignoring the j-th
+//      character.
+//
+//   3. The length of the longest common subsequence between the (i - 1)-th
+//      prefix and the (j - 1)-th prefix plus one if the i-th and the j-th
+//      character match, or zero if they don't, which corresponds to trying
+//      to add them to the longest common subsequence.
+//
+// Given this recursive relationship, we implement the straightforward Dynamic
+// Programming bottom-up algorithm.
+//
+// We remark that it's possible to implement this algorithm using O(min(m, n))
+// space by only keeping track of the previous row and the current one, since
+// that's all we need during the computation.
+//
+// Time: O(m * n), Space: O(m * n)
 
 #include <algorithm>
 #include <iostream>
