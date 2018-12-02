@@ -1,4 +1,28 @@
 // Copyright (c) 2018 Jacopo Notarstefano
+//
+// The edit distance between the i-th prefix of the first string and the j-th
+// prefix of the second string is the minimum of:
+//
+//   1. The edit distance between the (i - 1)-th prefix and the j-th prefix
+//      plus one, which corresponds to considering the i-th character of the
+//      first string as an edit of type insertion.
+//
+//   2. The edit distance between the i-th prefix and the (j - 1)-th prefix
+//      plus one, which corresponds to considering the j-th character of the
+//      second string as an edit of type insertion.
+//
+//   3. The edit distance between the (i - 1)-th prefix and the (j - 1)-th prefix
+//      plus zero if the i-th and j-th character match, or one if they don't,
+//      which corresponds to considering it as an edit of type replacement.
+//
+// Given this recursive relationship, we implement the straightforward Dynamic
+// Programming bottom-up algorithm.
+//
+// We remark that it's possible to implement this algorithm using O(min(m, n))
+// space by only keeping track of the previous row and the current one, since
+// that's all we need during the computation.
+//
+// Time: O(m * n), Space: O(m * n)
 
 #include <algorithm>
 #include <iostream>
