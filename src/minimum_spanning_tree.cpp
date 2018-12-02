@@ -1,4 +1,9 @@
 // Copyright (c) 2018 Jacopo Notarstefano
+//
+// This is a straightforward implementation of Kruskal's Algorithm using a
+// Disjoint Set data structure with path halving and union by size.
+//
+// Time: O(m log m), Space: O(m)
 
 #include <algorithm>
 #include <cstdint>
