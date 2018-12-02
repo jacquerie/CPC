@@ -1,4 +1,14 @@
 // Copyright (c) 2018 Jacopo Notarstefano
+//
+// We start by using |b_1| moves that add or subtract one to all elements,
+// depending on the sign of b_1. This makes all elements, in particular the
+// second one, equal to b_1. We will then need |b_2 - b_1| moves that operate
+// on all elements except the first one to make the second equal to b_2. The
+// same argument applies inductively to the i-th element, which will then
+// require |b_i - b_{i - 1}| moves to become equal to b_i. Therefore, the total
+// amount of moves is |b_1| + \sum_{i = 2}^{n}{|b_i - b_{i - 1}|}.
+//
+// Time: O(n), Space: O(1)
 
 #include <cmath>
 #include <cstdint>
