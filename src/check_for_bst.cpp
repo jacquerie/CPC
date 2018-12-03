@@ -10,15 +10,15 @@
 #include <climits>
 
 bool isBSTHelper(Node* root, int min, int max) {
-    if (!root) {
-        return true;
-    } else {
-        return min < root->data && root->data < max &&
-            isBSTHelper(root->left, min, root->data) &&
-            isBSTHelper(root->right, root->data, max);
-    }
+  if (!root) {
+    return true;
+  } else {
+    return min < root->data && root->data < max &&
+      isBSTHelper(root->left, min, root->data) &&
+      isBSTHelper(root->right, root->data, max);
+  }
 }
 
 bool isBST(Node* root) {
-    return isBSTHelper(root, INT_MIN, INT_MAX);
+  return isBSTHelper(root, INT_MIN, INT_MAX);
 }

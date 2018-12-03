@@ -23,29 +23,29 @@
 #include <vector>
 
 int kadanes_algorithm(int n, const std::vector<int>& nums) {
-    int max_ending_here = nums[0], max_so_far = nums[0];
+  int max_ending_here = nums[0], max_so_far = nums[0];
 
-    for (int i = 1; i < n; i++) {
-        max_ending_here = std::max(nums[i], max_ending_here + nums[i]);
-        max_so_far = std::max(max_so_far, max_ending_here);
-    }
+  for (int i = 1; i < n; i++) {
+    max_ending_here = std::max(nums[i], max_ending_here + nums[i]);
+    max_so_far = std::max(max_so_far, max_ending_here);
+  }
 
-    return max_so_far;
+  return max_so_far;
 }
 
 int main() {
-    int t; std::cin >> t;
-    for (int i = 0; i < t; i++) {
-        std::vector<int> nums;
+  int t; std::cin >> t;
+  for (int i = 0; i < t; i++) {
+    std::vector<int> nums;
 
-        int n; std::cin >> n;
-        for (int j = 0; j < n; j++) {
-            int num; std::cin >> num;
-            nums.push_back(num);
-        }
-
-        std::cout << kadanes_algorithm(n, nums) << std::endl;
-
-        nums.clear();
+    int n; std::cin >> n;
+    for (int j = 0; j < n; j++) {
+      int num; std::cin >> num;
+      nums.push_back(num);
     }
+
+    std::cout << kadanes_algorithm(n, nums) << std::endl;
+
+    nums.clear();
+  }
 }
