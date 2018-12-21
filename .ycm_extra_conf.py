@@ -4,4 +4,12 @@ from __future__ import absolute_import, division, print_function
 
 
 def Settings(**kwargs):
-    return {'flags': ['-x', 'c++', '-Wall', '-Wextra', '-Werror']}
+    return {
+        'flags': [
+            'std=c++14',
+            '-Wall',
+            '-Wextra',
+            '-Werror',
+            '-Wno-sign-compare',
+        ],
+    }
